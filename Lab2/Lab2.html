@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <h2>แบบฟอร์มจองทัวร์</h2>
+        <style>
+            .bordered-text {
+            font-size: 48px;
+            font-weight: bold;
+            text-transform: uppercase;
+            position: relative; /* ตั้งค่า position เพื่อสามารถกำหนดพิกัดของ border ได้ */
+            display: inline-block; /* จำกัดความกว้างของ border เพื่อให้มีขนาดเหมาะสมกับข้อความ */
+            padding: 10px; /* กำหนดระยะห่างของ border กับตัวอักษร */
+            z-index: 1; /* กำหนดให้ตัวอักษรอยู่ด้านบนของ border */
+        }
+
+            form{
+                border: 1px solid black;
+                padding:20px;
+                width:1000px;
+            }
+
+            #adress{
+                width: 400px;
+                height: 100px;
+            }
+
+            #post{
+                width:150px;
+                height :25 px;
+            }
+
+            .italic-text{
+                font-style: italic;
+            }
+            h4{
+                display:inline;
+                margin-right: 10px;
+
+            }
+        </style>
+    </head>
+    <body>
+        <h4>ข้อมูลทั้วไป</h4>
+        <form>
+            <h4>ชื่อ-สกุล:</h4><br>
+            <input
+            type ="text"
+             name ="ชื่อ-สกุล"
+             placeholder="กรอกชื่อ-สกุล"
+             pattern="[a-z]"
+             title ="กรุณากรอกชื่อและนามสกุลของคุณเท่านั้น"
+            >*
+            <br>
+
+            <h4>Email:</h4><br>
+            <input
+            type = "text"
+            name = "Email"
+            type = "email"
+            title = "กรุณากรอก E-mail ของคุณ"
+            >*<br>
+
+            <h4>โทรศัพท์:</h4><br>
+            <input
+            type = "text"
+            name = "โทรศัพท์"
+            value= "+66"
+            patern = "[0]\d{7}"
+            title = "กรุณากรอกเบอร์โทรศัพท์ของคุณ"
+            >*<br>
+
+            <h4>ที่อยู่:</h4><br>
+            <textarea 
+            type = "text"
+            name = "ที่อยู่"
+            title = "กรุณากรอกที่อยู่ของคุณ"
+            ></textarea><br>
+
+            
+            <h4>รหัสไปรษณีย์:</h4>
+            <input
+            type = "text"
+            name = "ที่อยู่"
+            pattern = "[1-10]{5}"
+            title = "กรุณากรอกที่อยู่ของคุณ"
+            size ="5"
+            maxlength="30"
+            ><br>
+
+            <h4>รูปผู้จอง:</h4>
+            <input
+            type = "file"
+            >
+
+        </form>
+        <h4>ข้อมูลเข้าสู้ระบบ</h4><br>
+        <form>
+            
+            <h4>Username:</h4><br>
+            <input
+            type ="text"
+             name ="Username"
+             pattern= "[a-z],[A,Z],[0,9],[_]{8}*"
+             title ="กรุณาUserคุณเท่านั้น"
+            ><br>
+            <p class = "italic-text">ประกอบด้วยตัวเลข ตัวอักษร หรือ_ตั้งแต่8ตัวขึ้นไป</p>
+            <br>
+
+            <h4>Password:</h4><br>
+            <input
+            type ="text"
+             name ="Password"
+             pattern = "{8}*"
+             title ="กรุณาPassword"
+            ><br>
+            <p class ="italic-text">ประกอบด้วยอักขระอะไรก็ได้8ตัวขึ้นไป</p>
+
+
+
+
+        </form>
+        
+        <h4>ข้อมูลทัวร์ที่ต้องการ</h4><br>
+        <form>
+            <h4>แพคเก็จทัวร์:</h4>
+            <select>
+                <option>Thai</option>
+                <option>Japan</option>
+                <option>England</option>
+                <option>USA</option>
+                <option>Italy</option>
+            </select><br>
+            <h4>วันที่เดินทาง:</h4>
+            <input
+            type ="date"
+            ><br>
+            <h4>จำนวนผู้เดินทาง:</h4>
+            <input
+            type = "number"
+            name = "จำนวนผู้ออกเดินทาง"
+            min="1"
+            max ="10"
+            title = "กรุณากรอกจำนวนผู้เดินทาง"
+            ><br>
+
+            <h4>เน้นการท่องเที่ยวแบบใด?</h4><br>
+            <input
+            type = "checkbox" id ="shopping"
+            >
+            <label for = "shopping">ช็อปปิ้ง</label><br>
+            <input
+            type ="checkbox" id ="Natural"
+            >
+            <label for ="Natural">ธรรมชาติ</label><br>
+            <input
+            type = "checkbox" id = "sea"
+            >
+            <label for = "sea">ทะเล</label><br>
+
+        </form>
+
+        <p4>ยอมรับเงื่อนไขและข้อตกลง</p4>
+        <input type ="radio" id ="agree"checked>
+        <label for ="agree">I agree</label>
+        <input type ="radio" id ="disagree" >
+        <label for ="disagree">I disagree</label>
+
+        <script>
+            const agreeRadio = document.getElementById('agree');
+            const disagreeRadio = document.getElementById('disagree');
+    
+            agreeRadio.addEventListener('click', () => {
+                if (!agreeRadio.checked) {
+                    agreeRadio.checked = true;
+                }
+                disagreeRadio.checked = false;
+            });
+    
+            disagreeRadio.addEventListener('click', () => {
+                if (!disagreeRadio.checked) {
+                    disagreeRadio.checked = true;
+                }
+                agreeRadio.checked = false;
+            });
+        </script>
+        <button>จอง</button>
+
+
+    </body>
+</html>
