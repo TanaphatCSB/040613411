@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/089e016d73.js" crossorigin="anonymous"></script>
+    
+    
+    <style>
+        @import "font-awesome";
+        .body{
+            background-color: white;
+        }
+        .flexible{
+            background-color: white;
+            margin:1rem;
+            border-radius: 20px;
+            box-shadow: 1px 1px 20px gray;
+            display: inline-flex;
+            padding: 2rem;
+        }
+        .product{
+            padding-left: 2rem;
+        }
+        .content{
+            padding: 2rem;
+            margin: 1rem;
+            background-color: gray;
+            border-radius: 4px;
+            
+        }
+
+        .wrap{
+            text-align: center;
+            background-color: blue;
+            padding: 1rem;
+            border-radius: 20px;
+            margin:20px;
+    
+    
+        }
+        .botton{
+            color:white;
+            background-color: blue;
+            text-align: center;
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+      
+       
+       
+        @media  screen and (max-width: 520px) {
+            .flexible{display: block;}
+            .product{text-align: center;}
+            .content{padding: 10px;}
+            .wrap{text-align: center;}
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flexible">
+        
+		<div class="product">
+            <img src="imgs/clock.jpg">
+        </div>
+
+        <div class="content">
+            Garmin Instinct, Rugged Outdoor Watch with GPS, 
+            Features GLONASS and Galileo, Heart Rate Monitoring and
+            3-axis Compass, Tundra<br><br>
+            <div class="wrap">
+                <a href="">
+                    <div class="botton"><i class="fa-sharp fa-light fa-cart-shopping"></i>Add to cart</div>
+                </a>
+            </div>
+		</div>
+
+    </div>
+
+</body>
+</html>
