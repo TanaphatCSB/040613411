@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset ="UTF-8">
+        <script>
+        function add(){
+            var name = document.getElementById("name").value;
+            var address = document.getElementById("address").value;
+            var phone = document.getElementById("phone").value; 
+            var table = document.getElementById("tb");
+           
+
+            var newrow = table.insertRow();
+            var li1 = newrow.insertCell(0);
+            var li2 = newrow.insertCell(1);
+            var li3 = newrow.insertCell(2);
+
+            
+            li1.innerHTML = name;
+            li2.innerHTML = address;
+            li3.innerHTML = phone;
+
+
+         
+        }
+        </script>
+    </head>
+    <body>
+        ชื่อลูกค้า : <input type ="text" id= "name"><br>
+        ที่อยู่: <input type = "text" id = "address"><br>
+        โทรศัพท์: <input type ="text" id ="phone"><br>
+        <input type ="button" value="เพิ่ม" onclick="add()"><br><br>
+        <table border="1" id ="tb">
+        <th>ชื่อลูกค้า</th>
+        <th>ที่อยู่</th>
+        <th>โทรศัพท์</th>
+    </table>
+    </body>
+</html>

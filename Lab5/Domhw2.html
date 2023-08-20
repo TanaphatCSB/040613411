@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  .green-text {
+    color: green;
+  }
+</style>
+<script>
+function changeColor(inputId) {
+    var inputElement = document.getElementById(inputId);
+    inputElement.classList.add("green-text");
+}
+</script>
+</head>
+<body>
+<form>
+    Name: <input type="text" id="nameInput" onblur="changeColor('nameInput')"><br>
+    Age: <input type="text" id="age" onblur="changeColor('age')"><br>
+    Birthdate: <input type="text" id="Birthdate" onblur="changeColor('Birthdate')"><br>
+</form>
+</body>
+</html>

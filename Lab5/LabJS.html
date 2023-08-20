@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scholarship Summary</title>
+</head>
+<body>
+<script>
+let students = [
+    {
+        fullname: 'นายตั้งใจ เรียนมาก',
+        age: 18,
+        year: 1,
+        gpa: 3.40,
+        help: true
+    },
+    {
+        fullname: 'นายสง่ งาน ตลอดมา',
+        age: 19,
+        year: 2,
+        gpa: 3.00,
+        help: false
+    },
+    {
+        fullname: 'นางสาวใส่ใจ ดีงาม',
+        age: 20,
+        year: 3,
+        gpa: 2.90,
+        help: true
+    }
+];
+
+// Function to check scholarship eligibility
+function checkScholarship(student) {
+    if (student.gpa >= 3.20) {
+        return true;
+    }
+    
+    if (student.year >= 2 && student.help && student.gpa >= 2.75) {
+        return true;
+    }
+    
+    return false;
+}
+
+// Function to display scholarship information
+function displayScholarshipInfo(student) {
+    let yearText = `ชั้นปีที่ ${student.year}`;
+    if (!student.help) {
+        console.log(`${yearText}\nไม่ได้รับทุนการศึกษา เนื่องจากเกรดเฉลี่ยไม่ถึงเกณฑ์ และยังไม่ได้ช่วยงานภาควิชา`);
+    } else {
+        console.log(`${yearText}\n${student.fullname} เนื่องจากเกรดเฉลี่ยถึงเกณฑ์และยังช่วยงานภาควิชาด้วย`);
+    }
+}
+
+// Loop through the students array
+for (let i = 0; i < students.length; i++) {
+    let student = students[i];
+    if (checkScholarship(student)) {
+        displayScholarshipInfo(student);
+    }
+}
+</script>
+</body>
+</html>
