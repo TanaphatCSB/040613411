@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Document</title>
+    <script>
+        function cal(){
+            let t1 = document.getElementById("text1");
+            let t2 = document.getElementById("text2");
+            let t3 = document.getElementById("text3");
+            let p = document.getElementById("sel");
+            let v1 = parseFloat(t1.value);
+            let v2 = parseFloat(t2.value);
+            let v3 = p.value;
+            let result =0;
+            switch (v3) {
+                case '+':
+                    result= v1 + v2;
+                    break;
+            
+                case '-':
+                    result= v1 - v2;
+                    break;
+                case '*':
+                    result = v1 * v2;
+                    break;
+                case '/':
+                    result = v1 / v2;
+                    break;
+            }
+            t3.value = result;
+            //console.log(p.value);
+        }
+        window.onload = function(){
+            let btn = document.getElementById("bt");
+            btn.onclick = cal;
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <input type="text" id="text1">
+        <select id="sel">
+            <option>+</option>
+            <option>-</option>
+            <option>*</option>
+            <option>/</option>
+        </select>
+        <input type="text" id="text2">=
+        <input type="text" id="text3">
+        <input type="button" value="Go Go" id="bt">
+    </form>
+</body>
+</html>
